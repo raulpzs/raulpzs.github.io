@@ -248,7 +248,6 @@
     .mini-card .label {
       color: var(--muted);
       font-size: 0.82rem;
-      text-transform: lowercase;
       letter-spacing: 0.04em;
       margin-bottom: 7px;
     }
@@ -318,7 +317,6 @@
     .now-item .k {
       color: var(--muted);
       font-size: 0.84rem;
-      text-transform: lowercase;
       margin-bottom: 4px;
     }
 
@@ -386,6 +384,16 @@
     .project p {
       color: var(--muted);
       margin: 0 0 14px;
+    }
+
+    .project ul {
+      margin: 10px 0 14px;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+    
+    .project ul li {
+      margin-bottom: 6px;
     }
 
     .project-links {
@@ -492,14 +500,13 @@
     <section class="hero">
       <div class="hero-grid">
         <div>
-          <div class="eyebrow">Data science · Applied AI · Public Policy · Climate</div>
           <h1>Raúl Alejandro Pérez Saucedo</h1>
           <p class="lead">
-            I build <span class="accent">LLM systems</span> for real-world contexts.
+            I’m interested in building <span class="accent">AI systems for policy, law, and climate</span>.
           </p>
           <p class="sublead">
-            I’m interested in making AI systems accessible, reliable, and useful beyond expert users,
-            with a focus on policy and climate in Latin America.
+            I work on applying large language models to real-world problems, including legal analysis and policy research, where I focus on transforming complex, multilingual texts into structured data.
+            My goal is to make these systems accessible, reliable, and useful beyond expert users.
           </p>
 
 ```
@@ -531,9 +538,8 @@
   <div class="about-grid">
     <div class="panel">
       <p>
-        I currently collaborate with The Carter Center, where I build LLM-based workflows
-        to analyze legal texts on freedom of expression and association. The goal is to help
-        create structured, cross-country datasets that support policy research and legal analysis.
+        I currently collaborate with The Carter Center, where I build LLM-based workflows to analyze legal texts on freedom of expression and association. 
+        My work sits at the intersection of AI and policy with a particular interest in Latin America.
       </p>
       <p>
         During my undergraduate studies, I worked across both research and industry. I received the Mitacs Globalink Research Scholarhip to work on AI pipelines for extracting and structuring NGO-regulation data at Concordia University.
@@ -559,36 +565,54 @@
 <section class="section" id="work">
   <h2 class="section-title">Projects</h2>
   <div class="projects">
+
     <article class="panel project">
       <div class="project-top">
-        <h3>LLMs for Comparative Legal Analysis of NGO Regulations</h3>
-        <span class="tag">paper / legal ai</span>
+        <h3>LLM Pipeline for Legal Coding</h3>
       </div>
+
       <p>
-        Developed a workflow using large language models to classify legal texts across countries,
-        evaluating prompting strategies, multilingual robustness, and model reliability.
+        I designed and evaluated a two-stage LLM pipeline to support the coding of legal texts
+        on freedom of expression. The goal was not full automation, but building
+        a system that meaningfully reduces the burden on human researchers.
       </p>
+
+      <ul>
+        <li>Processed a global corpus of 160+ laws across 60+ countries</li>
+        <li>Built a recall–verification pipeline combining GPT models, retrieval, and structured outputs</li>
+        <li>Showed tradeoffs between model performance, cost, and reliability in real-world workflows</li>
+      </ul>
+
       <div class="project-links">
-        <a href="Comparative_NGO_Regulations_LLM (3).pdf" target="_blank" rel="noopener noreferrer">Paper ↗</a>
+        <a href="Report_on_LLMs_and_Expression_Law.pdf" target="_blank" rel="noopener noreferrer">Report ↗</a>
         <a href="https://github.com/raulpzs" target="_blank" rel="noopener noreferrer">Code ↗</a>
       </div>
     </article>
 
     <article class="panel project">
       <div class="project-top">
-        <h3>LLM Pipeline for Legal Text Classification</h3>
-        <span class="tag">report / llm systems</span>
+        <h3>Comparative NGO Regulations with LLMs</h3>
       </div>
+
       <p>
-        Developed a multi-stage pipeline combining candidate extraction, retrieval-based verification,
-        and structured reasoning for scalable legal analysis. The focus was not just performance, but
-        producing outputs that remain interpretable and useful for human researchers.
+        I developed and tested an LLM-based workflow for analyzing NGO-related laws across
+        countries, focused on how prompting strategies and model design affect reliability
+        in comparative legal research.
       </p>
+
+      <ul>
+        <li>Evaluated performance across 10 countries and 3 languages</li>
+        <li>Compared prompting strategies, showing simple rule-based prompts outperform complex reasoning</li>
+        <li>Developed a prompt development frameowork for legal coding tasks</li>
+        <li>Designed workflows enabling scalable, cross-national legal data collection</li>
+      </ul>
+
       <div class="project-links">
-        <a href="Report_on_LLMs_and_Expression_Law.pdf" target="_blank" rel="noopener noreferrer">Report ↗</a>
+        <a href="Comparative_NGO_Regulations_LLM.pdf" target="_blank" rel="noopener noreferrer">Paper ↗</a>
         <a href="https://github.com/raulpzs" target="_blank" rel="noopener noreferrer">Code ↗</a>
       </div>
     </article>
+
   </div>
 </section>
 
@@ -600,7 +624,7 @@
         <p>
           Right now, I’m most interested in <span class="accent">applied LLM research</span>:
           retrieval-augmented generation, agentic workflows, and evaluation methods that help these
-          systems behave reliably in messy, high-stakes environments.
+          systems become more reliable and helpful for people.
         </p>
       </div>
     </div>
@@ -612,6 +636,8 @@
           <span class="interest">Applied LLM systems</span>
           <span class="interest">Multilingual RAG</span>
           <span class="interest">AI accessibility</span>
+          <span class="interest">Public policy in Latin America</span>
+          <span class="interest">Climate</span>
         </div>
       </div>
     </div>
