@@ -152,7 +152,7 @@
     }
 
     .hero p.sublead {
-      margin: 0 0 28px;
+      margin: 0 0 20px;
       color: var(--muted);
       max-width: 58ch;
       font-size: 1rem;
@@ -207,6 +207,7 @@
       gap: 16px;
     }
 
+    .portrait-card,
     .mini-card,
     .panel {
       border: 1px solid var(--border);
@@ -214,6 +215,30 @@
       backdrop-filter: blur(14px);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
+    }
+
+    .portrait-card {
+      min-height: 220px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top, rgba(124,140,255,0.16), transparent 45%),
+        rgba(17, 24, 39, 0.72);
+    }
+
+    .portrait-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .portrait-placeholder {
+      color: var(--muted);
+      font-size: 0.92rem;
+      text-align: center;
+      padding: 24px;
     }
 
     .mini-card {
@@ -258,7 +283,7 @@
       content: "";
       height: 1px;
       flex: 1;
-      background: linear-gradient(90deg, rgba(var(--glow),0.45), transparent);
+      background: linear-gradient(90deg, rgba(124,140,255,0.5), transparent);
     }
 
     .panel {
@@ -324,8 +349,8 @@
     }
 
     .project:hover {
-      transform: translateY(-4px);
-      border-color: rgba(var(--glow),0.35);
+      transform: translateY(-3px);
+      border-color: rgba(124,140,255,0.4);
     }
 
     .project:hover::before {
@@ -471,22 +496,17 @@
           <h1>Raúl Pérez Saucedo</h1>
           <p class="lead">
             I build <span class="accent">LLM systems</span> for real-world policy contexts —
-            especially around <span class="accent-2">retrieval, agents, evaluation</span>, and
-            making AI more accessible beyond expert users.
+            focusing on <span class="accent">retrieval, agents, and evaluation</span>.
           </p>
           <p class="sublead">
-            I’m interested in building tools that are useful, fair, and globally relevant,
-            with a long-term focus on policy, climate, and ensuring Mexico and Latin America
-            are not left behind.
+            I’m interested in making AI systems accessible, reliable, and useful beyond expert users,
+            with a focus on policy, climate, and Latin America.
           </p>
 
 ```
       <div class="pill-row">
-        <span class="pill">RAG</span>
-        <span class="pill">agents</span>
-        <span class="pill">evaluation</span>
-        <span class="pill">policy AI</span>
-        <span class="pill">Latin America</span>
+        <span class="pill">currently: carter center · legal ai workflows</span>
+        <span class="pill">focus: rag · agents · evaluation</span>
       </div>
 
       <div class="link-row" id="links">
@@ -498,6 +518,14 @@
     </div>
 
     <div class="hero-side">
+      <div class="portrait-card">
+        <!-- Replace profile.jpg with your actual image file -->
+        <img src="profile.jpg" alt="Portrait of Raúl Pérez Saucedo" />
+        <!-- If you don't have a picture yet, use this instead:
+        <div class="portrait-placeholder">Add a portrait here<br>profile.jpg</div>
+        -->
+      </div>
+
       <div class="mini-card">
         <div class="label">currently</div>
         <div class="value">Collaborating with The Carter Center</div>
@@ -566,9 +594,8 @@
         <span class="tag">paper / legal ai</span>
       </div>
       <p>
-        Built a workflow using large language models to analyze and classify NGO-related laws across
-        multiple countries. The project explored prompting strategies, model selection, multilingual
-        robustness, and reliability in legal coding tasks.
+        Developed a workflow using large language models to classify legal texts across countries,
+        evaluating prompting strategies, multilingual robustness, and model reliability.
       </p>
       <div class="project-links">
         <a href="Comparative_NGO_Regulations_LLM (3).pdf" target="_blank" rel="noopener noreferrer">Paper ↗</a>
@@ -630,7 +657,7 @@
 </section>
 
 <footer class="footer">
-  <span>built with html · last updated 2026</span>
+  <span>built with html · thinking about ai systems and policy · 2026</span>
   <span><a href="mailto:raulpzs@outlook.com">raulpzs@outlook.com</a></span>
 </footer>
 ```
