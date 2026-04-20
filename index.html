@@ -5,216 +5,231 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Raúl Alejandro Pérez Saucedo</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --text: #1f2937;
+      --text: #111827;
       --muted: #6b7280;
+      --light: #9ca3af;
       --border: #e5e7eb;
-      --bg-soft: #f9fafb;
-      --link: #111827;
+      --accent: #2563eb;
     }
 
-```
-* {
-  box-sizing: border-box;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-body {
-  font-family: Arial, sans-serif;
-  color: var(--text);
-  max-width: 900px;
-  margin: 48px auto;
-  padding: 0 20px 60px;
-  line-height: 1.7;
-  background: white;
-}
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      max-width: 760px;
+      margin: 60px auto;
+      padding: 0 20px 80px;
+      line-height: 1.75;
+      background: #ffffff;
+    }
 
-h1, h2, h3 {
-  line-height: 1.25;
-  margin-bottom: 12px;
-}
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
 
-h1 {
-  font-size: 2.2rem;
-  margin-bottom: 8px;
-}
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-top: 56px;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
 
-h2 {
-  font-size: 1.4rem;
-  margin-top: 48px;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 8px;
-}
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
 
-p {
-  margin: 0 0 16px;
-}
+    p {
+      margin-bottom: 16px;
+      color: var(--text);
+    }
 
-.subtitle {
-  color: var(--muted);
-  font-size: 1.05rem;
-  margin-bottom: 24px;
-}
+    .muted {
+      color: var(--muted);
+    }
 
-.intro {
-  font-size: 1.05rem;
-  margin-bottom: 24px;
-}
+    .subtitle {
+      color: var(--muted);
+      margin-bottom: 24px;
+      font-size: 1.05rem;
+    }
 
-.links {
-  margin: 20px 0 8px;
-}
+    .links {
+      margin-top: 16px;
+      margin-bottom: 8px;
+    }
 
-.links a,
-.project-links a {
-  color: var(--link);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  margin-right: 16px;
-}
+    .links a {
+      margin-right: 14px;
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
 
-.links a:hover,
-.project-links a:hover {
-  border-bottom-color: var(--link);
-}
+    .links a:hover {
+      color: var(--text);
+    }
 
-.card {
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 22px;
-  margin-top: 20px;
-  background: var(--bg-soft);
-}
+    .section {
+      margin-top: 48px;
+    }
 
-.card h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
-}
+    .project {
+      margin-bottom: 28px;
+    }
 
-.muted {
-  color: var(--muted);
-}
+    .project-title {
+      font-weight: 500;
+    }
 
-ul {
-  padding-left: 20px;
-  margin-top: 10px;
-}
+    .project-links a {
+      font-size: 0.9rem;
+      margin-right: 12px;
+      color: var(--muted);
+      text-decoration: none;
+    }
 
-li {
-  margin-bottom: 8px;
-}
+    .project-links a:hover {
+      color: var(--text);
+    }
 
-.footer {
-  margin-top: 56px;
-  padding-top: 20px;
-  border-top: 1px solid var(--border);
-  color: var(--muted);
-  font-size: 0.95rem;
-}
+    ul {
+      padding-left: 18px;
+      margin-top: 8px;
+    }
 
-@media (max-width: 640px) {
-  body {
-    margin: 28px auto;
-  }
+    li {
+      margin-bottom: 6px;
+      color: var(--muted);
+    }
 
-  h1 {
-    font-size: 1.8rem;
-  }
+    .footer {
+      margin-top: 64px;
+      font-size: 0.9rem;
+      color: var(--light);
+    }
 
-  .links a,
-  .project-links a {
-    display: inline-block;
-    margin-bottom: 8px;
-  }
-}
-```
+    @media (max-width: 640px) {
+      body {
+        margin: 40px auto;
+      }
 
+      h1 {
+        font-size: 2rem;
+      }
+    }
   </style>
+
 </head>
+
 <body>
+
   <header>
-    <h1>Raúl Alejandro Pérez Saucedo</h1>
+    <h1>Raúl Pérez Saucedo</h1>
 
 ```
-<p class="intro">
+<p>
   Hello, I’m Raúl. I hold a B.S. in Data Science and Mathematics from Tecnológico de Monterrey (ITESM).
-  My work focuses on applied AI and machine learning in policy, society, and climate. I'm interested in how humans and AI interact in decision-making. 
-
+  My work focuses on applied AI and machine learning in policy, society, and climate. I'm interested in how humans and AI interact in decision-making.
 </p>
 
 <div class="links">
-  <a href="https://github.com/raulpzs" target="_blank" rel="noopener noreferrer">GitHub</a>
-  <a href="https://huggingface.co/raulpzs" target="_blank" rel="noopener noreferrer">Hugging Face</a>
-  <a href="https://www.linkedin.com/in/raulpzs" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <a href="https://github.com/raulpzs" target="_blank">GitHub</a>
+  <a href="https://huggingface.co/raulpzs" target="_blank">Hugging Face</a>
+  <a href="https://www.linkedin.com/in/raulpzs" target="_blank">LinkedIn</a>
 </div>
 ```
 
   </header>
 
-  <section>
+  <section class="section">
     <h2>About</h2>
-    <p>
-      I currently collaborate with The Carter Center. I've built LLM-based workflows to codify laws on freedom of expression. This work contributes to building structured, cross-country datasets for policy research.
-    </p>
-    <p>
-      During my undergraduate studies, I worked across both industry and research. At CEMEX, I built SQL-based data systems and dashboards for operational metrics. At Concordia University, I worked on automating data extraction for the GRNDS project, an initiative that compiles and standardizes data from national charity registers worldwide.
-    <p>
-      I’m interested in applied LLM research, especially agent-based RAG systems and evaluation. Long term, I want to help build AI systems that are accessible, fair, and sustainable, and that support people and institutions in high-impact domains such as policy and climate. I care especially about ensuring Mexico and Latin America as a whole have a role in the development and use of these systems.
-    </p>
+
+```
+<p>
+  I currently collaborate with The Carter Center, where I've built LLM-based workflows to analyze and structure laws on freedom of expression. This work contributes to building cross-country datasets for policy research.
+</p>
+
+<p>
+  During my undergraduate studies, I worked across both industry and research. At CEMEX, I built SQL-based data systems and dashboards for operational metrics. At Concordia University, I worked on automating data extraction for the GRNDS project, which compiles and standardizes global NGO regulation data.
+</p>
+
+<p>
+  I’m interested in applied LLM systems, especially agent-based RAG systems and evaluation. Long term, I want to build accesible AI systems that support people in policy and climate. I care especially about ensuring Mexico and Latin America have a role in the development of these systems.
+</p>
+```
+
   </section>
 
-  <section>
+  <!-- WORK -->
+
+  <section class="section">
     <h2>Selected Work</h2>
 
 ```
-<div class="card">
-  <h3>LLMs for Comparative Legal Analysis of NGO Regulations</h3>
-  <p>
-    Developed a workflow using large language models to analyze and classify NGO-related laws across multiple countries. The project explored how prompting strategies, model selection, and multilingual legal texts affect accuracy, consistency, and instruction-following in legal coding tasks.
+<div class="project">
+  <div class="project-title">LLMs for Comparative Legal Analysis of NGO Regulations</div>
+  <p class="muted">
+    Built a system using LLMs to classify and analyze legal texts across countries. Explored prompting strategies, multilingual robustness, and evaluation of model reliability in legal coding tasks.
   </p>
-  <p class="project-links">
-    <a href="https://github.com/raulpzs" target="_blank" rel="noopener noreferrer">Code</a>
-  </p>
+  <div class="project-links">
+    <a href="#">Paper</a>
+    <a href="https://github.com/raulpzs" target="_blank">Code</a>
+  </div>
 </div>
 
-<div class="card">
-  <h3>LLM Pipeline for Legal Text Classification</h3>
-  <p>
-    Built a multi-stage pipeline for legal text analysis combining LLM-based candidate extraction, verification, and structured reasoning. This work focused on making legal coding more scalable while keeping outputs interpretable and useful for human researchers.
+<div class="project">
+  <div class="project-title">LLM Pipeline for Legal Text Classification</div>
+  <p class="muted">
+    Developed a multi-stage pipeline combining LLM-based extraction, verification, and structured reasoning. Focused on improving scalability and interpretability in policy-related text analysis.
   </p>
-  <p class="project-links">
-    <a href="https://github.com/raulpzs" target="_blank" rel="noopener noreferrer">Code</a>
-  </p>
+  <div class="project-links">
+    <a href="#">Report</a>
+    <a href="https://github.com/raulpzs" target="_blank">Code</a>
+  </div>
 </div>
 
-<div class="card">
-  <h3>Profiles and Demos</h3>
-  <p>
-    I share interactive demos of these projects through Hugging Face.
+<div class="project">
+  <div class="project-title">Profiles and Demos</div>
+  <p class="muted">
+    Additional experiments, demos, and projects available on GitHub and Hugging Face.
   </p>
-  <p class="project-links">
-    <a href="https://github.com/raulpzs" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
-    <a href="https://huggingface.co/raulpzs" target="_blank" rel="noopener noreferrer">Hugging Face Profile</a>
-  </p>
+  <div class="project-links">
+    <a href="https://github.com/raulpzs" target="_blank">GitHub</a>
+    <a href="https://huggingface.co/raulpzs" target="_blank">Hugging Face</a>
+  </div>
 </div>
 ```
 
   </section>
 
-  <section>
+  <!-- INTERESTS -->
+
+  <section class="section">
     <h2>Interests</h2>
     <ul>
-      <li>Applied LLM research</li>
-      <li>Retrieval-augmented generation and agents</li>
-      <li>Evaluation and reliability of agentic systems</li>
+      <li>Applied LLM systems</li>
+      <li>Multilingual retrieval-augmented generation and agents</li>
       <li>AI for policy and climate</li>
       <li>AI accessibility and inclusion in Latin America</li>
     </ul>
   </section>
 
   <div class="footer">
-    <p>Last updated 2026.</p>
+    Last updated 2026
   </div>
+
 </body>
 </html>
-
