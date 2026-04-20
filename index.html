@@ -3,20 +3,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Raúl Pérez Saucedo</title>
-
-  <!-- Font -->
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --text: #111827;
-      --muted: #6b7280;
-      --light: #9ca3af;
-      --border: #e5e7eb;
-      --accent: #2563eb;
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #6366f1;
+      --border: rgba(255,255,255,0.06);
     }
 
     * {
@@ -25,101 +24,92 @@
 
     body {
       font-family: 'Inter', sans-serif;
+      background: var(--bg);
       color: var(--text);
-      max-width: 880px;
+      max-width: 900px;
       margin: 60px auto;
       padding: 0 24px 80px;
       line-height: 1.7;
-      background: #ffffff;
-    }
-
-    /* HEADER */
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 40px;
-      margin-bottom: 40px;
-    }
-
-    .header-text {
-      flex: 1;
     }
 
     h1 {
-      font-size: 2.4rem;
+      font-size: 2.5rem;
       font-weight: 600;
       margin-bottom: 6px;
     }
 
     .subtitle {
       color: var(--muted);
-      font-size: 1.05rem;
-      margin-bottom: 18px;
+      margin-bottom: 24px;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--muted);
+    }
+
+    a:hover {
+      color: var(--text);
     }
 
     .links a {
       margin-right: 14px;
       font-size: 0.95rem;
-      text-decoration: none;
-      color: var(--muted);
     }
 
-    .links a:hover {
-      color: var(--text);
-    }
-
-    /* Optional profile image */
-    .profile {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    /* SECTIONS */
+    /* Section */
     .section {
-      margin-top: 56px;
+      margin-top: 60px;
     }
 
     .section-title {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       font-weight: 500;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
+      color: var(--muted);
+      text-transform: lowercase;
+      letter-spacing: 0.5px;
     }
 
     p {
       margin-bottom: 16px;
     }
 
-    .muted {
-      color: var(--muted);
+    /* Cards */
+    .project {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 20px;
+      border-radius: 14px;
+      margin-bottom: 20px;
+      transition: all 0.25s ease;
     }
 
-    /* PROJECTS */
-    .project {
-      margin-bottom: 28px;
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 20px;
+    .project:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(99,102,241,0.15);
     }
 
     .project-title {
       font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .project-links {
+      margin-top: 10px;
     }
 
     .project-links a {
-      font-size: 0.9rem;
       margin-right: 12px;
-      text-decoration: none;
+      font-size: 0.9rem;
       color: var(--muted);
     }
 
     .project-links a:hover {
-      color: var(--text);
+      color: var(--accent);
     }
 
-    /* LIST */
     ul {
       padding-left: 18px;
     }
@@ -129,26 +119,25 @@
       color: var(--muted);
     }
 
-    /* FOOTER */
     .footer {
-      margin-top: 70px;
-      font-size: 0.9rem;
-      color: var(--light);
+      margin-top: 80px;
+      color: var(--muted);
+      font-size: 0.85rem;
     }
 
-    /* MOBILE */
-    @media (max-width: 700px) {
-      .header {
-        flex-direction: column;
+    /* Glow accent */
+    .accent {
+      color: var(--accent);
+    }
+
+    /* Mobile */
+    @media (max-width: 640px) {
+      body {
+        margin: 40px auto;
       }
 
-      .project {
-        grid-template-columns: 1fr;
-      }
-
-      .profile {
-        width: 90px;
-        height: 90px;
+      h1 {
+        font-size: 2rem;
       }
     }
   </style>
@@ -159,55 +148,45 @@
 
   <!-- HEADER -->
 
-  <div class="header">
-    <div class="header-text">
-      <h1>Raúl Pérez Saucedo</h1>
-      <div class="subtitle">AI Systems · Policy · LLMs · RAG · Agents</div>
+  <header>
+    <h1>Raúl Pérez Saucedo</h1>
+    <div class="subtitle">AI systems · policy · llms · rag · agents</div>
 
 ```
-  <p>
-    Hello, I’m Raúl. I work on applied large language model systems in policy and societal contexts,
-    with a focus on real-world deployment, evaluation, and impact.
-  </p>
+<p>
+  I build <span class="accent">applied LLM systems</span> for real-world contexts, focusing on policy, evaluation,
+  and deployment. My work explores how these systems can be reliable, useful, and accessible beyond technical users.
+</p>
 
-  <div class="links">
-    <a href="https://github.com/raulpzs" target="_blank">GitHub</a>
-    <a href="https://huggingface.co/raulpzs" target="_blank">Hugging Face</a>
-    <a href="https://www.linkedin.com/in/raulpzs" target="_blank">LinkedIn</a>
-  </div>
+<div class="links">
+  <a href="https://github.com/raulpzs" target="_blank">github</a>
+  <a href="https://huggingface.co/raulpzs" target="_blank">hugging face</a>
+  <a href="https://www.linkedin.com/in/raulpzs" target="_blank">linkedin</a>
 </div>
-
-<!-- OPTIONAL IMAGE -->
-<!-- Replace with your photo if you want -->
-<!-- <img src="profile.jpg" class="profile" /> -->
 ```
 
-  </div>
+  </header>
 
   <!-- ABOUT -->
 
   <div class="section">
-    <div class="section-title">About</div>
+    <div class="section-title">about</div>
 
 ```
 <p>
   I hold a B.S. in Data Science and Mathematics from Tecnológico de Monterrey (ITESM).
-  I currently collaborate with The Carter Center, where I build LLM-based workflows
-  to analyze and structure legal texts on freedom of expression and association.
+  I currently collaborate with The Carter Center, building LLM workflows to analyze
+  legal texts on freedom of expression and association.
 </p>
 
 <p>
-  During my undergraduate studies, I worked across both industry and research.
-  At CEMEX, I built SQL-based data systems and dashboards for operational metrics.
-  At Concordia University, I worked on automating data extraction for the GRNDS project,
-  compiling global NGO regulation data.
+  My background spans both research and industry. I’ve worked on data systems at CEMEX
+  and developed AI pipelines for global NGO regulation data at Concordia University.
 </p>
 
 <p>
-  I’m interested in applied LLM systems, especially retrieval-augmented generation,
-  agents, and evaluation. Long term, I want to build AI systems that are accessible,
-  fair, and useful in high-impact domains such as policy and climate, with a focus
-  on ensuring Latin America is not left behind.
+  Long term, I’m interested in making AI systems <span class="accent">accessible, fair, and globally relevant</span>,
+  especially in regions like Latin America.
 </p>
 ```
 
@@ -216,34 +195,30 @@
   <!-- WORK -->
 
   <div class="section">
-    <div class="section-title">Selected Work</div>
+    <div class="section-title">selected work</div>
 
 ```
 <div class="project">
-  <div class="project-title">NGO Regulation LLM System</div>
-  <div>
-    <p class="muted">
-      Built a system using LLMs to classify and analyze legal texts across countries,
-      focusing on prompting strategies, multilingual robustness, and evaluation.
-    </p>
-    <div class="project-links">
-      <a href="#">Paper</a>
-      <a href="https://github.com/raulpzs" target="_blank">Code</a>
-    </div>
+  <div class="project-title">LLMs for NGO Regulation Analysis</div>
+  <p>
+    Built a system using LLMs to classify legal texts across countries,
+    focusing on prompting strategies, multilingual robustness, and evaluation.
+  </p>
+  <div class="project-links">
+    <a href="#">paper</a>
+    <a href="https://github.com/raulpzs" target="_blank">code</a>
   </div>
 </div>
 
 <div class="project">
-  <div class="project-title">Legal Coding Pipeline</div>
-  <div>
-    <p class="muted">
-      Developed a multi-stage pipeline combining LLM extraction, verification, and
-      structured reasoning for scalable legal analysis.
-    </p>
-    <div class="project-links">
-      <a href="#">Report</a>
-      <a href="https://github.com/raulpzs" target="_blank">Code</a>
-    </div>
+  <div class="project-title">LLM Legal Coding Pipeline</div>
+  <p>
+    Developed a multi-stage pipeline combining LLM extraction,
+    verification, and structured reasoning for scalable policy analysis.
+  </p>
+  <div class="project-links">
+    <a href="#">report</a>
+    <a href="https://github.com/raulpzs" target="_blank">code</a>
   </div>
 </div>
 ```
@@ -253,19 +228,19 @@
   <!-- INTERESTS -->
 
   <div class="section">
-    <div class="section-title">Interests</div>
+    <div class="section-title">interests</div>
     <ul>
-      <li>Applied LLM systems and evaluation</li>
-      <li>RAG and agent-based systems</li>
-      <li>AI for policy and climate</li>
-      <li>AI accessibility in Latin America</li>
+      <li>applied llm systems and evaluation</li>
+      <li>rag and agent-based systems</li>
+      <li>ai for policy and climate</li>
+      <li>ai accessibility in latin america</li>
     </ul>
   </div>
 
   <!-- FOOTER -->
 
   <div class="footer">
-    Last updated 2026
+    built with html · 2026
   </div>
 
 </body>
