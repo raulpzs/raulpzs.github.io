@@ -1,670 +1,243 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Raúl Alejandro Pérez Saucedo</title>
+  <meta name="description" content="Raúl Alejandro Pérez Saucedo — data scientist working on AI for public good, civil society and civil freedoms.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0a0f1f;
-      --bg-2: #10172a;
-      --panel: rgba(17, 24, 39, 0.72);
-      --panel-strong: rgba(17, 24, 39, 0.88);
-      --text: #e5ecf4;
-      --muted: #97a3b6;
-      --soft: #c9d4e3;
-      --border: rgba(255,255,255,0.08);
-      --accent: #7c8cff;
-      --accent-2: #3dd9c5;
-      --glow: 124, 140, 255;
-      --max: 980px;
-      --radius: 18px;
-      --shadow: 0 12px 40px rgba(0,0,0,0.28);
+      --bg: #fdfcfa;
+      --text: #1f2328;
+      --muted: #5c636b;
+      --rule: #e4e1db;
+      --link: #1a5490;
+      --link-hover: #0e3a66;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #16181b;
+        --text: #e6e4df;
+        --muted: #a0a4a9;
+        --rule: #2e3136;
+        --link: #8db8e8;
+        --link-hover: #b9d4f2;
+      }
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
+      background: var(--bg);
       color: var(--text);
-      background:
-        radial-gradient(circle at 15% 20%, rgba(124,140,255,0.20), transparent 0 28%),
-        radial-gradient(circle at 85% 18%, rgba(61,217,197,0.14), transparent 0 24%),
-        radial-gradient(circle at 50% 85%, rgba(124,140,255,0.12), transparent 0 28%),
-        linear-gradient(180deg, #08101d 0%, #0b1220 40%, #0a0f1f 100%);
-      line-height: 1.72;
-      overflow-x: hidden;
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 17px;
+      line-height: 1.62;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-      background-size: 32px 32px;
-      mask-image: radial-gradient(circle at center, black 45%, transparent 92%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .wrap {
-      width: min(var(--max), calc(100% - 40px));
+    main {
+      max-width: 760px;
       margin: 0 auto;
-      position: relative;
-      z-index: 1;
+      padding: 56px 24px 72px;
     }
 
-    .nav {
-      position: sticky;
-      top: 14px;
-      z-index: 20;
-      display: flex;
-      justify-content: center;
-      margin-top: 16px;
-    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { color: var(--link-hover); text-decoration: underline; }
 
-    .nav-inner {
-      display: inline-flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      padding: 8px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: rgba(10, 15, 31, 0.68);
-      backdrop-filter: blur(14px);
-      box-shadow: var(--shadow);
+    .intro {
+      display: grid;
+      grid-template-columns: 1fr 180px;
+      gap: 36px;
+      align-items: start;
     }
-
-    .nav a {
+    h1 {
+      margin: 0 0 6px;
+      font-size: 1.9rem;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+    .role {
+      margin: 0 0 18px;
+      font-family: 'Source Sans 3', sans-serif;
       color: var(--muted);
-      text-decoration: none;
-      font-size: 0.92rem;
-      padding: 8px 14px;
-      border-radius: 999px;
-      transition: 0.22s ease;
+      font-size: 0.98rem;
     }
-
-    .nav a:hover {
-      color: var(--text);
-      background: rgba(255,255,255,0.05);
+    .intro p { margin: 0 0 14px; }
+    .links {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.95rem;
+      margin-top: 18px;
     }
-
-    .hero {
-      min-height: 92vh;
-      display: grid;
-      align-items: center;
-      padding: 72px 0;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
-      gap: 34px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--soft);
-      font-size: 0.94rem;
-      margin-bottom: 18px;
-      letter-spacing: 0.01em;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 34px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--accent));
+    .links a + a::before {
+      content: "·";
+      color: var(--muted);
+      margin: 0 9px;
       display: inline-block;
     }
-
-    h1 {
-      margin: 0 0 14px;
-      font-size: clamp(2.4rem, 5vw, 4.5rem);
-      line-height: 0.95;
-      letter-spacing: -0.06em;
-      font-weight: 700;
-      max-width: 12ch;
-    }
-
-    .hero p.lead {
-      margin: 0 0 18px;
-      color: var(--soft);
-      font-size: 1.08rem;
-      max-width: 60ch;
-    }
-
-    .hero p.sublead {
-      margin: 0 0 20px;
-      color: var(--muted);
-      max-width: 58ch;
-      font-size: 1rem;
-    }
-
-    .accent {
-      color: var(--accent);
-    }
-
-    .accent-2 {
-      color: var(--accent-2);
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 22px 0 28px;
-    }
-
-    .pill {
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.04);
-      color: var(--soft);
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      backdrop-filter: blur(10px);
-    }
-
-    .link-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      align-items: center;
-    }
-
-    .link-row a {
-      color: var(--soft);
-      text-decoration: none;
-      font-size: 0.98rem;
-      transition: 0.2s ease;
-    }
-
-    .link-row a:hover {
-      color: var(--accent);
-      transform: translateY(-1px);
-    }
-
-    .hero-side {
-      display: grid;
-      gap: 16px;
-    }
-
-    .portrait-card,
-    .mini-card,
-    .panel {
-      border: 1px solid var(--border);
-      background: var(--panel);
-      backdrop-filter: blur(14px);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .portrait-card {
-      min-height: 220px;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at top, rgba(124,140,255,0.16), transparent 45%),
-        rgba(17, 24, 39, 0.72);
-    }
-
-    .portrait-card img {
-      width: 100%;
-      height: 100%;
+    .photo img {
+      width: 180px;
+      height: 220px;
       object-fit: cover;
+      object-position: center top;
+      border-radius: 4px;
       display: block;
     }
 
-    .portrait-placeholder {
-      color: var(--muted);
-      font-size: 0.92rem;
-      text-align: center;
-      padding: 24px;
-    }
-
-    .mini-card {
-      padding: 18px 18px 16px;
-    }
-
-    .mini-card .label {
-      color: var(--muted);
+    h2 {
+      font-family: 'Source Sans 3', sans-serif;
       font-size: 0.82rem;
-      letter-spacing: 0.04em;
-      margin-bottom: 7px;
-    }
-
-    .mini-card .value {
-      color: var(--text);
-      font-size: 1rem;
-      font-weight: 500;
-    }
-
-    .mini-card .small {
-      margin-top: 6px;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .section {
-      padding: 44px 0;
-    }
-
-    .section-title {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin: 0 0 20px;
-      font-size: 1.15rem;
       font-weight: 600;
-      letter-spacing: -0.02em;
-    }
-
-    .section-title::after {
-      content: "";
-      height: 1px;
-      flex: 1;
-      background: linear-gradient(90deg, rgba(124,140,255,0.5), transparent);
-    }
-
-    .panel {
-      padding: 24px;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 22px;
-    }
-
-    .panel p:last-child {
-      margin-bottom: 0;
-    }
-
-    .now-list {
-      display: grid;
-      gap: 14px;
-    }
-
-    .now-item {
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .now-item:last-child {
-      border-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    .now-item .k {
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       color: var(--muted);
-      font-size: 0.84rem;
-      margin-bottom: 4px;
+      margin: 48px 0 18px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
     }
 
-    .now-item .v {
-      color: var(--soft);
-      font-size: 0.96rem;
+    .item { margin-bottom: 22px; }
+    .item-title { font-weight: 600; }
+    .authors, .venue {
+      font-size: 0.94rem;
+      color: var(--muted);
+    }
+    .authors strong { color: var(--text); font-weight: 600; }
+    .venue { font-style: italic; }
+    .item p { margin: 4px 0 0; }
+    .item-links {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.9rem;
+      margin-top: 4px;
     }
 
-    .projects {
-      display: grid;
-      gap: 18px;
-    }
-
-    .project {
-      position: relative;
-      overflow: hidden;
-      transition: 0.24s ease;
-    }
-
-    .project::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, rgba(var(--glow),0.08), transparent 40%);
-      opacity: 0;
-      transition: 0.24s ease;
-      pointer-events: none;
-    }
-
-    .project:hover {
-      transform: translateY(-3px);
-      border-color: rgba(124,140,255,0.4);
-    }
-
-    .project:hover::before {
-      opacity: 1;
-    }
-
-    .project-top {
+    .row {
       display: grid;
       grid-template-columns: 1fr auto;
-      gap: 18px;
-      align-items: start;
-      margin-bottom: 10px;
+      gap: 16px;
+      margin-bottom: 14px;
     }
-
-    .project h3 {
-      margin: 0;
-      font-size: 1.14rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-    }
-
-    .tag {
-      display: inline-block;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 0.78rem;
-      color: var(--soft);
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.04);
+    .row .when {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.9rem;
+      color: var(--muted);
       white-space: nowrap;
     }
+    .row .sub { color: var(--muted); font-size: 0.94rem; }
 
-    .project-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 12px;
-      align-items: center;
-    }
-
-    .tag-accent {
-      border-color: rgba(124,140,255,0.3);
-      color: var(--accent);
-      background: rgba(124,140,255,0.08);
-    }
-
-    .tag-accent-2 {
-      border-color: rgba(61,217,197,0.3);
-      color: var(--accent-2);
-      background: rgba(61,217,197,0.08);
-    }
-
-    .project p {
-      color: var(--muted);
-      margin: 0 0 14px;
-    }
-
-    .project ul {
-      margin: 10px 0 14px;
-      padding-left: 18px;
+    footer {
+      margin-top: 56px;
+      padding-top: 16px;
+      border-top: 1px solid var(--rule);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.88rem;
       color: var(--muted);
     }
-    
-    .project ul li {
-      margin-bottom: 6px;
-    }
 
-    .project-links {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .project-links a {
-      color: var(--soft);
-      text-decoration: none;
-      font-size: 0.93rem;
-    }
-
-    .project-links a:hover {
-      color: var(--accent);
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .interest-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .interest {
-      padding: 9px 12px;
-      border-radius: 12px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-      color: var(--soft);
-      font-size: 0.92rem;
-    }
-
-    .footer {
-      padding: 28px 0 60px;
-      color: var(--muted);
-      font-size: 0.9rem;
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .footer a {
-      color: var(--muted);
-      text-decoration: none;
-    }
-
-    .footer a:hover {
-      color: var(--soft);
-    }
-
-    @media (max-width: 860px) {
-      .hero-grid,
-      .about-grid,
-      .grid-2 {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        min-height: auto;
-        padding-top: 54px;
-      }
-
-      h1 {
-        max-width: none;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .wrap {
-        width: min(var(--max), calc(100% - 26px));
-      }
-
-      .panel,
-      .mini-card {
-        padding: 18px;
-      }
-
-      .project-top {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width: 640px) {
+      main { padding: 36px 18px 56px; }
+      .intro { grid-template-columns: 1fr; gap: 20px; }
+      .photo { order: -1; }
+      .photo img { width: 140px; height: 172px; }
+      .row { grid-template-columns: 1fr; gap: 0; }
     }
   </style>
-
 </head>
 <body>
-  <div class="nav">
-    <div class="nav-inner">
-      <a href="#about">About</a>
-      <a href="#work">Work</a>
-      <a href="#focus">Interests</a>
-      <a href="#links">Links</a>
-    </div>
-  </div>
+<main>
 
-  <main class="wrap">
-    <section class="hero">
-      <div class="hero-grid">
-        <div>
-          <h1>Raúl Alejandro Pérez Saucedo</h1>
-          <p class="lead">
-            I'm a data scientist working on artificial intelligence for public good, with a focus on civil society and civil freedoms. I work at the intersection of <span class="accent">tech, legal research and public policy</span>.
-          </p>
-          <p class="sublead">
-            I'm interested in AI safety and how people and AI systems work together. I currently build human-in-the-loop systems for legal annotation.
-          </p>
-
-
-
-      <div class="link-row" id="links">
-        <a href="https://github.com/raulpzs" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-        <a href="https://huggingface.co/raulpzs" target="_blank" rel="noopener noreferrer">Hugging Face ↗</a>
-        <a href="https://www.linkedin.com/in/raulpzs" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-        <a href="Raul_Perez_Saucedo.pdf" target="_blank" rel="noopener noreferrer">Resume ↗</a>
-      </div>
-    </div>
-
-    <div class="hero-side">
-      <div class="portrait-card">
-        <img src="picture.jpg" alt="Portrait of Raúl Pérez Saucedo" />
-      </div>
-
-      <div class="mini-card">
-        <div class="label">Background</div>
-        <div class="value">B.S. in Data Science and Mathematics</div>
-        <div class="small">Tecnológico de Monterrey (ITESM)</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="about">
-  <h2 class="section-title">About</h2>
-
-  <div class="panel">
-    <p>
-      I studied Data Science and Mathematics Engineering at Tecnológico de Monterrey. Currently, I work with The Carter Center’s Democracy Program on language-model workflows for comparative legal research, covering 
-      freedom of expression and association laws across languages. This includes LEX, a released dataset of institutional statements coded from laws in 60+ countries.
-    </p>
-
-    <p>
-      Previously as a Mitacs Globalink intern, I built a pipeline for extracting and classifying NGO regulation data from civil society laws, which I presented at ARNOVA 2025. 
-      At CEMEX in Monterrey, Mexico, I built SQL-based data systems and dashboards for operational and sustainability metrics.
-    </p>
-
-    <p>
-      I’m interested in how language models and agentic AI can help people reason over public-interest information, from law and governance to environmental data, especially in Latin America.
-    </p>
-  </div>
-</section>
-
-<section class="section" id="work">
-  <h2 class="section-title">Research &amp; Projects</h2>
-  <div class="projects">
-
-    <article class="panel project">
-      <div class="project-top">
-        <h3>LLM Pipeline for Legal Coding</h3>
-      </div>
-      <div class="project-meta">
-        <span class="tag tag-accent">Technical Report</span>
-        <span class="tag">Co-authored</span>
-      </div>
+  <section class="intro">
+    <div>
+      <h1>Raúl Alejandro Pérez Saucedo</h1>
+      <p class="role">Data scientist · AI and Legal Researcher, The Carter Center</p>
 
       <p>
-        Built an AI-assisted workflow that helps researchers structure large legal corpora while preserving human oversight. Compared a pipeline combining LLM extraction and fine-tuned BERT with an LLM-only pipeline using retrieval-based verification.
+        I'm a data scientist working on artificial intelligence for public good, with a focus on civil society and civil freedoms. I work at the intersection of tech, legal research and public policy.
       </p>
-
-      <div class="project-links">
-        <a href="https://www.lawsofexpression.org/LLMs_and_Expression_Laws.pdf" target="_blank" rel="noopener noreferrer">Report ↗</a>
-      </div>
-    </article>
-
-    <article class="panel project">
-      <div class="project-top">
-        <h3>Comparative NGO Regulations with LLMs</h3>
-      </div>
-      <div class="project-meta">
-        <span class="tag tag-accent">Conference Paper · ARNOVA 2025</span>
-        <span class="tag">Co-authored</span>
-      </div>
-
       <p>
-        I developed and tested an LLM-based workflow for analyzing NGO-related laws across countries, focused on how prompting strategy and model choice affect reliability in comparative legal research.
+        I'm interested in AI safety, in how people and AI systems work together, and in how language models can help people reason over public-interest information, from law and governance to environmental data, especially in Latin America. I currently build and evaluate human-in-the-loop systems for legal annotation.
       </p>
 
-      <!--<div class="project-links">
-        <a href="Comparative_NGO_Regulations_LLM.pdf" target="_blank" rel="noopener noreferrer">Paper ↗</a>
-        <a href="https://github.com/raulpzs" target="_blank" rel="noopener noreferrer">Code ↗</a>
-      </div>-->
-    </article>
-
-    <article class="panel project">
-      <div class="project-top">
-        <h3>Freedom of Expression in Venezuela and El Salvador</h3>
+      <div class="links">
+        <a href="mailto:raulpzs@outlook.com">Email</a><a href="https://github.com/raulpzs" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://huggingface.co/raulpzs" target="_blank" rel="noopener noreferrer">Hugging Face</a><a href="https://www.linkedin.com/in/raulpzs" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <!-- Re-add once Raul_Perez_Saucedo.pdf is uploaded to the repo:
+        <a href="Raul_Perez_Saucedo.pdf" target="_blank" rel="noopener noreferrer">CV</a> -->
       </div>
-      <div class="project-meta">
-        <span class="tag tag-accent-2">Policy Brief</span>
-        <span class="tag">The Carter Center</span>
-        <span class="tag">Co-authored</span>
-      </div>
-
-      <p>
-        I co-authored a policy brief comparing freedom of expression trajectories in Venezuela and El Salvador, combining de jure legal coding with de facto indicators to study how democratic backsliding can follow different institutional pathways.
-      </p>
-      
-    </article>
-
-    <article class="panel project">
-      <div class="project-top">
-        <h3>PM2.5 Air Quality Sensor Calibration</h3>
-      </div>
-      <div class="project-meta">
-        <span class="tag tag-accent-2">Environmental Data</span>
-      </div>
-
-      <p>
-        I built time-series regression models to calibrate low-cost PM2.5 sensors against reference-grade monitors, improving measurement reliability in one of Mexico’s most industrialized regions.
-      </p>
-
-    </article>
-
-  </div>
-</section>
-
-<section class="section" id="focus">
-  <h2 class="section-title">Interests</h2>
-  <div class="panel">
-    <div class="interest-list">
-      <span class="interest">Applied NLP</span>
-      <span class="interest">AI safety</span>
-      <span class="interest">Human-computer interaction (HCI)</span>
-      <span class="interest">Public-interest technology</span>
-      <span class="interest">Environmental sustainability</span>
     </div>
+    <div class="photo">
+      <img src="picture.jpg" alt="Portrait of Raúl Alejandro Pérez Saucedo">
+    </div>
+  </section>
+
+  <h2>Research</h2>
+
+  <div class="item">
+    <div class="item-title">Catching Up to Global NGO Regulatory Change: A Responsible AI Workflow for Comparative Legal Coding</div>
+    <div class="authors"><strong>Raúl Alejandro Pérez Saucedo</strong>, Elizabeth A. Bloodgood, Anthony J. DeMattee</div>
+    <div class="venue">International Society for Third-Sector Research (ISTR) Conference, 2026</div>
+    <p>A GPT-5 workflow for coding civil society laws in five languages, evaluated against the distribution of human coder labels. A retrieval-based verification step did not change accuracy but raised evidence faithfulness from 0.69 to 0.95.</p>
   </div>
-</section>
 
-<footer class="footer">
-  <span><a href="mailto:raulpzs@outlook.com">raulpzs@outlook.com</a></span>
-</footer>
+  <div class="item">
+    <div class="item-title">Technical Report on Using LLMs for Legal Coding</div>
+    <div class="authors"><strong>Raúl Alejandro Pérez Saucedo</strong>, Emily Adams, Hans-Inge Langø, Anthony J. DeMattee</div>
+    <div class="venue">The Carter Center, Democracy Program, 2026</div>
+    <p>Compares a two-stage GPT pipeline (recall-oriented labeling, then retrieval-based verification) with a hybrid of LLM text splitting and a fine-tuned LEGAL-BERT, on freedom-of-expression laws from 62 countries.</p>
+    <div class="item-links"><a href="https://www.lawsofexpression.org/LLMs_and_Expression_Laws.pdf" target="_blank" rel="noopener noreferrer">PDF</a></div>
+  </div>
 
+  <div class="item">
+    <div class="item-title">Large Language Models for Coding Comparative Law and Regulations</div>
+    <div class="authors"><strong>Raúl Alejandro Pérez Saucedo</strong>, Alix Morales, Anthony J. DeMattee, Elizabeth A. Bloodgood</div>
+    <div class="venue">Association for Research on Nonprofit Organizations and Voluntary Action (ARNOVA) Conference, 2025</div>
+    <p>Tests GPT-4o and GPT-5 on coding constitutional provisions on expression, association and assembly. A strict output-format prompt nearly doubled GPT-4o's accuracy but had no effect on GPT-5.</p>
+  </div>
 
-  </main>
+  <div class="item">
+    <div class="item-title">Freedom of Expression in Venezuela and El Salvador</div>
+    <div class="venue">Policy brief, The Carter Center (co-authored)</div>
+    <p>Compares freedom of expression trajectories in the two countries, combining de jure legal coding with de facto indicators to show how democratic backsliding can follow different institutional pathways.</p>
+  </div>
+
+  <div class="item">
+    <div class="item-title">PM2.5 Air Quality Sensor Calibration</div>
+    <div class="venue">Ecological Committee of Nuevo León</div>
+    <p>Time-series regression models calibrating low-cost PM2.5 sensors against reference-grade monitors in one of Mexico's most industrialized regions.</p>
+  </div>
+
+  <h2>Experience</h2>
+
+  <div class="row">
+    <div>The Carter Center, Democracy Program<div class="sub">AI and Legal Researcher (contractor) · Atlanta</div></div>
+    <div class="when">Jun 2025 – present</div>
+  </div>
+  <div class="row">
+    <div>Concordia University<div class="sub">Research Intern, Mitacs Globalink Scholar · Montreal</div></div>
+    <div class="when">Jun – Sep 2024</div>
+  </div>
+  <div class="row">
+    <div>CEMEX<div class="sub">Data Science Intern · Monterrey</div></div>
+    <div class="when">Sep 2024 – Feb 2025</div>
+  </div>
+  <div class="row">
+    <div>Ecological Committee of Nuevo León<div class="sub">Volunteer environmental data analyst</div></div>
+    <div class="when">Jan – Jun 2024</div>
+  </div>
+
+  <h2>Education</h2>
+
+  <div class="row">
+    <div>Tecnológico de Monterrey (ITESM)<div class="sub">B.S. in Data Science and Mathematics Engineering</div></div>
+    <div class="when">2021 – 2025</div>
+  </div>
+
+  <footer>
+    Raúl Alejandro Pérez Saucedo · <a href="mailto:raulpzs@outlook.com">raulpzs@outlook.com</a>
+  </footer>
+
+</main>
 </body>
 </html>
-
